@@ -313,6 +313,19 @@ window.Quarto = {
 <p>We have already seen some Quarto documents, but up until now we have treated it as just a way to run <code>R</code> code. We will now give a brief, more formal introduction to Quarto. More information is available in the <a href="https://quarto.org/docs/guide/">Quarto guide</a>.</p>
 <section id="reproducibility-and-literate-programming" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="reproducibility-and-literate-programming"><span class="header-section-number">3.2.1</span> Reproducibility and Literate Programming</h3>
+<p>Reproducibility means that someone else (or even your future self) can take your code, data, and documentation, and obtain the same results you did. This is essential for scientific integrity and for building on previous work. In practice, reproducibility requires:</p>
+<ul>
+<li>All code and data are available and clearly organized.</li>
+<li>The computational environment (software versions, dependencies) is documented.</li>
+<li>The process to generate results is automated and documented.</li>
+</ul>
+<p>Literate programming is a methodology introduced by Donald Knuth, where code and narrative are woven together in a single document. The idea is to write programs that are understandable by humans first, and computers second. In practice, this means:</p>
+<ul>
+<li>Explanations, assumptions, and reasoning are written alongside code.</li>
+<li>The document can be “knitted” or “rendered” to produce a readable report, with code, output, and narrative together.</li>
+<li>Errors or changes in data/code are automatically reflected in the output, reducing manual mistakes.</li>
+</ul>
+<p>Quarto (and previously R Markdown) are tools that enable literate programming in R and other languages. They allow you to combine markdown text, code chunks, and output in a single <code>.qmd</code> file. This approach ensures that your analysis is transparent, reproducible, and easier to share or update.</p>
 </section>
 <section id="anatomy-of-a-quarto-document" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored"><span class="header-section-number">3.2.2</span> Anatomy of a Quarto Document</h3>
