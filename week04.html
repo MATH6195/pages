@@ -260,7 +260,10 @@ window.Quarto = {
   <li><a href="#built-in-data-loading-functions" id="toc-built-in-data-loading-functions" class="nav-link" data-scroll-target="#built-in-data-loading-functions"><span class="header-section-number">4.4.1</span> Built-in Data Loading Functions</a></li>
   <li><a href="#core-tidyverse-data-operations" id="toc-core-tidyverse-data-operations" class="nav-link" data-scroll-target="#core-tidyverse-data-operations"><span class="header-section-number">4.4.2</span> Core <code>tidyverse</code> Data Operations</a></li>
   </ul></li>
-  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="header-section-number">4.5</span> <code>dplyr</code></a></li>
+  <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="header-section-number">4.5</span> <code>dplyr</code></a>
+  <ul class="collapse">
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="header-section-number">4.5.1</span> Grouping</a></li>
+  </ul></li>
   <li><a href="#tidyr" id="toc-tidyr" class="nav-link" data-scroll-target="#tidyr"><span class="header-section-number">4.6</span> <code>tidyr</code></a></li>
   </ul>
 </nav>
@@ -598,15 +601,89 @@ Tip
 </div>
 </div>
 <p>The output is the same, but because we apply the <code>mutate</code> operation before the <code>filter</code>, we will compute <code>gdp_billions</code> for all 1704 rows before discarding all but 23 rows. This is wasteful, and can have a significant performance implication on larger datasets!</p>
+<section id="grouping" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="grouping"><span class="header-section-number">4.5.1</span> Grouping</h3>
+<p>Grouping data is a powerful feature in <code>dplyr</code> that allows you to perform operations within subsets of your data. The <code>group_by()</code> function is used to specify one or more variables to group by, and then you can apply summary functions or transformations to each group.</p>
+<p>For example, suppose we want to compute the average life expectancy for each continent in the <code>gapminder</code> dataset. We can first group by the continent:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="ot">=</span> gapminder <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(continent)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+# Groups:   continent [5]
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+<p>The result tells us that we have a <code>tibble</code> that has been separated into subgroups, and shows the first of the groups. We can access other groups as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_keys</span>(grouped) <span class="co"># view what groups are available</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 1
+  continent
+  &lt;fct&gt;    
+1 Africa   
+2 Americas 
+3 Asia     
+4 Europe   
+5 Oceania  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_split</span>(grouped)[[<span class="dv">5</span>]] <span class="co"># access the Oceania group</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 24 × 6
+   country   continent  year lifeExp      pop gdpPercap
+   &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+ 1 Australia Oceania    1952    69.1  8691212    10040.
+ 2 Australia Oceania    1957    70.3  9712569    10950.
+ 3 Australia Oceania    1962    70.9 10794968    12217.
+ 4 Australia Oceania    1967    71.1 11872264    14526.
+ 5 Australia Oceania    1972    71.9 13177000    16789.
+ 6 Australia Oceania    1977    73.5 14074100    18334.
+ 7 Australia Oceania    1982    74.7 15184200    19477.
+ 8 Australia Oceania    1987    76.3 16257249    21889.
+ 9 Australia Oceania    1992    77.6 17481977    23425.
+10 Australia Oceania    1997    78.8 18565243    26998.
+# ℹ 14 more rows</code></pre>
+</div>
+</div>
+<p>Far more useful, though, is to use the <code>summarise</code> command to <em>aggregate</em> the groups directly, producing a new <code>tibble</code> with the results. The below command does this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(continent) <span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">avg_lifeExp =</span> <span class="fu">mean</span>(lifeExp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  continent avg_lifeExp
+  &lt;fct&gt;           &lt;dbl&gt;
+1 Africa           48.9
+2 Americas         64.7
+3 Asia             60.1
+4 Europe           71.9
+5 Oceania          74.3</code></pre>
+</div>
+</div>
+</section>
 </section>
 <section id="tidyr" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="tidyr"><span class="header-section-number">4.6</span> <code>tidyr</code></h2>
 <p>The <code>gapminder</code> dataset is a <em>tall</em> dataset; it contains multiple rows for each <code>country</code> and <code>continent</code>. <code>tidyr</code> contains <code>pivot</code> operations to allow us to convert <em>tall</em> datasets into <em>wide</em> datasets, for example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="ot">=</span> gapminder <span class="sc">|&gt;</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, year, lifeExp) <span class="sc">|&gt;</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>year, <span class="at">values_from=</span>lifeExp)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>gapminder_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="ot">=</span> gapminder <span class="sc">|&gt;</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, year, lifeExp) <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>year, <span class="at">values_from=</span>lifeExp)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>gapminder_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 142 × 13
    country `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987` `1992` `1997`
@@ -627,9 +704,9 @@ Tip
 </div>
 <p>Now we end up with a 142 <span class="math inline">\(\times\)</span> 13 <code>tibble</code> whose entries are <code>lifeExp</code>. We can use the “wide” dataset to easily calculate the change in life expecancy:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="sc">|&gt;</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">change =</span> <span class="st">`</span><span class="at">2007</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">1952</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">change =</span> <span class="st">`</span><span class="at">2007</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">1952</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, change)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 142 × 2
    country     change
@@ -662,12 +739,12 @@ Tip
 </div>
 <p>The “inverse” of <code>pivot_wider</code> is <code>pivot_longer</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="sc">|&gt;</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">cols=</span><span class="fu">colnames</span>(gapminder_wide)[<span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gapminder_wide)], </span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_to=</span><span class="st">"year"</span>, </span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to=</span><span class="st">"lifeExp"</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gapminder_wide <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">cols=</span><span class="fu">colnames</span>(gapminder_wide)[<span class="dv">2</span><span class="sc">:</span><span class="fu">ncol</span>(gapminder_wide)], </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_to=</span><span class="st">"year"</span>, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_to=</span><span class="st">"lifeExp"</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 3
    country     year  lifeExp
