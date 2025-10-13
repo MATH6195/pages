@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Introduction to Shiny – MATH6195: Fundamentals of Data Science in R</title>
+<title>7&nbsp; Introduction to Shiny – MATH6195: Fundamentals of Data Science in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bibliography.html" rel="next">
-<link href="./ethics.html" rel="prev">
+<link href="./week08.html" rel="next">
+<link href="./week06.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week07.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week07.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -156,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -185,14 +185,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Ethics and Biases</span></span></a>
+  <a href="./week07.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">SQL for Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -212,16 +224,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#what-is-shiny" id="toc-what-is-shiny" class="nav-link" data-scroll-target="#what-is-shiny"><span class="header-section-number">8.1</span> What is Shiny?</a></li>
-  <li><a href="#basic-structure-of-a-shiny-app" id="toc-basic-structure-of-a-shiny-app" class="nav-link" data-scroll-target="#basic-structure-of-a-shiny-app"><span class="header-section-number">8.2</span> Basic Structure of a Shiny App</a></li>
-  <li><a href="#how-shiny-apps-are-executed" id="toc-how-shiny-apps-are-executed" class="nav-link" data-scroll-target="#how-shiny-apps-are-executed"><span class="header-section-number">8.3</span> How Shiny Apps are Executed</a></li>
-  <li><a href="#reactive-programming" id="toc-reactive-programming" class="nav-link" data-scroll-target="#reactive-programming"><span class="header-section-number">8.4</span> Reactive Programming</a>
+  <li><a href="#what-is-shiny" id="toc-what-is-shiny" class="nav-link" data-scroll-target="#what-is-shiny"><span class="header-section-number">7.1</span> What is Shiny?</a></li>
+  <li><a href="#basic-structure-of-a-shiny-app" id="toc-basic-structure-of-a-shiny-app" class="nav-link" data-scroll-target="#basic-structure-of-a-shiny-app"><span class="header-section-number">7.2</span> Basic Structure of a Shiny App</a></li>
+  <li><a href="#how-shiny-apps-are-executed" id="toc-how-shiny-apps-are-executed" class="nav-link" data-scroll-target="#how-shiny-apps-are-executed"><span class="header-section-number">7.3</span> How Shiny Apps are Executed</a></li>
+  <li><a href="#reactive-programming" id="toc-reactive-programming" class="nav-link" data-scroll-target="#reactive-programming"><span class="header-section-number">7.4</span> Reactive Programming</a>
   <ul class="collapse">
-  <li><a href="#reactive-expressions" id="toc-reactive-expressions" class="nav-link" data-scroll-target="#reactive-expressions"><span class="header-section-number">8.4.1</span> Reactive Expressions</a></li>
-  <li><a href="#observers" id="toc-observers" class="nav-link" data-scroll-target="#observers"><span class="header-section-number">8.4.2</span> Observers</a></li>
+  <li><a href="#reactive-expressions" id="toc-reactive-expressions" class="nav-link" data-scroll-target="#reactive-expressions"><span class="header-section-number">7.4.1</span> Reactive Expressions</a></li>
+  <li><a href="#observers" id="toc-observers" class="nav-link" data-scroll-target="#observers"><span class="header-section-number">7.4.2</span> Observers</a></li>
   </ul></li>
-  <li><a href="#common-use-cases" id="toc-common-use-cases" class="nav-link" data-scroll-target="#common-use-cases"><span class="header-section-number">8.5</span> Common Use Cases</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">8.6</span> Limitations</a></li>
+  <li><a href="#common-use-cases" id="toc-common-use-cases" class="nav-link" data-scroll-target="#common-use-cases"><span class="header-section-number">7.5</span> Common Use Cases</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">7.6</span> Limitations</a></li>
   </ul>
 </nav>
     </div>
@@ -230,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></h1>
+<h1 class="title"><span id="sec-shiny" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></h1>
 </div>
 
 
@@ -256,14 +268,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Recognise common use cases for <code>shiny</code>, and its limitations.</li>
 </ul>
 </section>
-<section id="what-is-shiny" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="what-is-shiny"><span class="header-section-number">8.1</span> What is Shiny?</h2>
+<section id="what-is-shiny" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="what-is-shiny"><span class="header-section-number">7.1</span> What is Shiny?</h2>
 <p>Shiny is an R package that makes it easy to build interactive web applications directly from R. Developed by RStudio (now Posit), Shiny allows users to turn analyses into interactive dashboards and tools without requiring knowledge of HTML, CSS, or JavaScript.</p>
 <p>Shiny apps are especially useful for sharing data analyses with others, enabling users to explore data and results dynamically through a web browser. This interactivity helps bridge the gap between static reports and fully custom web applications.</p>
 <p>Key features of Shiny include: - Seamless integration with R code and packages. - Automatic UI updates in response to user input. - Support for a wide range of input and output widgets. - Ability to deploy apps locally or on the web (e.g., via shinyapps.io or Shiny Server).</p>
 </section>
-<section id="basic-structure-of-a-shiny-app" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="basic-structure-of-a-shiny-app"><span class="header-section-number">8.2</span> Basic Structure of a Shiny App</h2>
+<section id="basic-structure-of-a-shiny-app" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="basic-structure-of-a-shiny-app"><span class="header-section-number">7.2</span> Basic Structure of a Shiny App</h2>
 <p>A basic Shiny app consists of two main components:</p>
 <ul>
 <li><strong>UI (User Interface):</strong> Defines the layout and appearance of the app.</li>
@@ -300,8 +312,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="how-shiny-apps-are-executed" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="how-shiny-apps-are-executed"><span class="header-section-number">8.3</span> How Shiny Apps are Executed</h2>
+<section id="how-shiny-apps-are-executed" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="how-shiny-apps-are-executed"><span class="header-section-number">7.3</span> How Shiny Apps are Executed</h2>
 <p>Running Shiny apps within Quarto is not possible; they need to be written in <code>R</code> scripts. There are several ways to run Shiny apps in development:</p>
 <ol type="1">
 <li>In an interactive session, type the code <code>shinyApp(ui, server)</code>.</li>
@@ -326,8 +338,8 @@ Browsing http://127.0.0.1:3689</code></pre>
 </ul>
 <p>This architecture allows for real-time, interactive data exploration without requiring users to install R or any packages.</p>
 </section>
-<section id="reactive-programming" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="reactive-programming"><span class="header-section-number">8.4</span> Reactive Programming</h2>
+<section id="reactive-programming" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="reactive-programming"><span class="header-section-number">7.4</span> Reactive Programming</h2>
 <p>Reactive programming is a programming paradigm centred around the propagation of changes. In Shiny, this means that outputs automatically update in response to changes in inputs, without the need for explicit instructions to recalculate or redraw.</p>
 <p>Shiny achieves this through a system of “reactive expressions” and “reactive values.” When a user interacts with an input widget (like a slider or text box), Shiny tracks which outputs depend on that input. Only the affected outputs are recalculated and updated, making the app efficient and responsive.</p>
 <p>Key concepts in Shiny’s reactive programming:</p>
@@ -338,8 +350,8 @@ Browsing http://127.0.0.1:3689</code></pre>
 <li><strong>Observers:</strong> Code blocks (created with <code>observe()</code> or <code>observeEvent()</code>) that perform actions in response to changes, such as updating UI elements or triggering side effects.</li>
 </ul>
 <p>We have already seen <em>inputs</em> and <em>outputs</em>; now we will talk about <em>reactive expressions</em> and <em>observers</em>.</p>
-<section id="reactive-expressions" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="reactive-expressions"><span class="header-section-number">8.4.1</span> Reactive Expressions</h3>
+<section id="reactive-expressions" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="reactive-expressions"><span class="header-section-number">7.4.1</span> Reactive Expressions</h3>
 <p>Reactivity in Shiny is the mechanism by which code automatically updates when inputs, or other reactive values, change. In the previous code block we already used a reactive function: <code>renderText</code>. This ensures that the server is called - and therefore the UI is updated - whenever <code>input$num</code> changes. In the background, <code>R</code> is building a graph of dependencies on values from the UI, and updates <em>only</em> the appropriate parts of the server logic when the dependencies change.</p>
 <p>There are multiple other reactive functions</p>
 <ul>
@@ -378,8 +390,8 @@ Browsing http://127.0.0.1:3689</code></pre>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="observers" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="observers"><span class="header-section-number">8.4.2</span> Observers</h3>
+<section id="observers" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="observers"><span class="header-section-number">7.4.2</span> Observers</h3>
 <p>Observers are another way to introduce reactivity. Whereas <code>reactive</code> statements typically return values and are designed to give reusable expressions, <code>observe</code> statements do not return values, and are used when one might want to run code with side effects (e.g.&nbsp;for logging) or to trigger UI updates manually.</p>
 <p>The two main observer functions are:</p>
 <ul>
@@ -418,8 +430,8 @@ Browsing http://127.0.0.1:3689</code></pre>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="common-use-cases" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="common-use-cases"><span class="header-section-number">8.5</span> Common Use Cases</h2>
+<section id="common-use-cases" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="common-use-cases"><span class="header-section-number">7.5</span> Common Use Cases</h2>
 <p>Shiny is widely used in a variety of contexts where interactive data exploration, visualization, or reporting is valuable. Common use cases include:</p>
 <ul>
 <li><strong>Interactive dashboards:</strong> Creating dynamic dashboards for monitoring key metrics, business intelligence, or research results.</li>
@@ -431,8 +443,8 @@ Browsing http://127.0.0.1:3689</code></pre>
 </ul>
 <p>Shiny is especially useful when you want to empower non-programmers to interact with data or models, or when you need to communicate results in a more engaging and flexible way than static reports allow.</p>
 </section>
-<section id="limitations" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="limitations"><span class="header-section-number">8.6</span> Limitations</h2>
+<section id="limitations" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="limitations"><span class="header-section-number">7.6</span> Limitations</h2>
 <p>While Shiny is a powerful tool, it has several limitations:</p>
 <ul>
 <li><strong>Performance:</strong> Shiny apps can become slow with large datasets or complex computations, as all processing is handled on the server side and R is single-threaded by default.</li>
@@ -870,13 +882,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./ethics.html" class="pagination-link" aria-label="Data Ethics and Biases">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Ethics and Biases</span></span>
+      <a href="./week06.html" class="pagination-link" aria-label="Data Visualisation Principles">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Visualisation Principles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bibliography.html" class="pagination-link" aria-label="Bibliography">
-        <span class="nav-page-text">Bibliography</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week08.html" class="pagination-link" aria-label="Research Software Engineering and Architecture in R">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

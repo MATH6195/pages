@@ -156,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,6 +181,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./week06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Visualisation Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">SQL for Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -223,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Wrangling II - Joins, Strings and Dates</span></h1>
+<h1 class="title"><span id="sec-data-2" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Wrangling II - Joins, Strings and Dates</span></span></h1>
 </div>
 
 
@@ -519,7 +543,7 @@ Regular Expressions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">year</span>(<span class="fu">today</span>()), <span class="fu">month</span>(<span class="fu">today</span>()), <span class="fu">day</span>(<span class="fu">today</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2025   10    8</code></pre>
+<pre><code>[1] 2025   10   13</code></pre>
 </div>
 </div>
 <p>For example, if we want to compute a student’s age we can use <code>lubridate</code>’s <code>interval</code> function followed by <code>time_length</code></p>
@@ -528,9 +552,9 @@ Regular Expressions
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">time_length</span>(<span class="st">"years"</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>student_data<span class="sc">$</span>Age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 23.90959 22.15616 23.08767 22.50685 23.41096 21.13699 21.33425 22.83836
- [9] 21.27671 22.85479 23.17808 22.27123 23.69589 22.13699 22.00548 22.10137
-[17] 21.29041 22.08767 23.69863 23.15342</code></pre>
+<pre><code> [1] 23.92329 22.16986 23.10137 22.52055 23.42466 21.15068 21.34795 22.85205
+ [9] 21.29041 22.86849 23.19178 22.28493 23.70959 22.15068 22.01918 22.11507
+[17] 21.30411 22.10137 23.71233 23.16712</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>student_data<span class="sc">$</span>Age <span class="sc">|&gt;</span> <span class="fu">floor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -542,13 +566,13 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interval</span>(student_data<span class="sc">$</span><span class="st">`</span><span class="at">Date of Birth</span><span class="st">`</span>, <span class="fu">today</span>()) <span class="sc">|&gt;</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.period</span>(<span class="at">unit=</span><span class="st">"years"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "23y 10m 28d 0H 0M 0S" "22y 1m 26d 0H 0M 0S"  "23y 1m 2d 0H 0M 0S"  
- [4] "22y 6m 2d 0H 0M 0S"   "23y 4m 27d 0H 0M 0S"  "21y 1m 19d 0H 0M 0S" 
- [7] "21y 4m 0d 0H 0M 0S"   "22y 10m 2d 0H 0M 0S"  "21y 3m 9d 0H 0M 0S"  
-[10] "22y 10m 8d 0H 0M 0S"  "23y 2m 4d 0H 0M 0S"   "22y 3m 7d 0H 0M 0S"  
-[13] "23y 8m 11d 0H 0M 0S"  "22y 1m 19d 0H 0M 0S"  "22y 0m 2d 0H 0M 0S"  
-[16] "22y 1m 7d 0H 0M 0S"   "21y 3m 14d 0H 0M 0S"  "22y 1m 2d 0H 0M 0S"  
-[19] "23y 8m 12d 0H 0M 0S"  "23y 1m 25d 0H 0M 0S" </code></pre>
+<pre><code> [1] "23y 11m 3d 0H 0M 0S"  "22y 2m 1d 0H 0M 0S"   "23y 1m 7d 0H 0M 0S"  
+ [4] "22y 6m 7d 0H 0M 0S"   "23y 5m 2d 0H 0M 0S"   "21y 1m 24d 0H 0M 0S" 
+ [7] "21y 4m 5d 0H 0M 0S"   "22y 10m 7d 0H 0M 0S"  "21y 3m 14d 0H 0M 0S" 
+[10] "22y 10m 13d 0H 0M 0S" "23y 2m 9d 0H 0M 0S"   "22y 3m 12d 0H 0M 0S" 
+[13] "23y 8m 16d 0H 0M 0S"  "22y 1m 24d 0H 0M 0S"  "22y 0m 7d 0H 0M 0S"  
+[16] "22y 1m 12d 0H 0M 0S"  "21y 3m 19d 0H 0M 0S"  "22y 1m 7d 0H 0M 0S"  
+[19] "23y 8m 17d 0H 0M 0S"  "23y 2m 0d 0H 0M 0S"  </code></pre>
 </div>
 </div>
 <p>We could also just subtract the dates, but this gives a difference in terms of <em>days</em> which would be difficult to convert to years (due to leap years).</p>
@@ -556,8 +580,8 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() <span class="sc">-</span> student_data<span class="sc">$</span><span class="st">`</span><span class="at">Date of Birth</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time differences in days
- [1] 8733 8093 8433 8221 8551 7720 7792 8342 7771 8348 8466 8135 8655 8086 8038
-[16] 8073 7776 8068 8656 8457</code></pre>
+ [1] 8738 8098 8438 8226 8556 7725 7797 8347 7776 8353 8471 8140 8660 8091 8043
+[16] 8078 7781 8073 8661 8462</code></pre>
 </div>
 </div>
 </section>
@@ -573,7 +597,7 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>time2 <span class="ot">=</span> <span class="fu">now</span>()</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>time2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-10-08 13:54:55 BST"</code></pre>
+<pre><code>[1] "2025-10-13 15:40:49 BST"</code></pre>
 </div>
 </div>
 <p>We can then extract hours, minutes and seconds:</p>

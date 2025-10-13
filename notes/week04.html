@@ -205,7 +205,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -234,6 +234,30 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">SQL for Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./bibliography.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliography</span></a>
   </div>
@@ -258,7 +282,7 @@ window.Quarto = {
   <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data"><span class="header-section-number">4.4</span> Loading Data</a>
   <ul class="collapse">
   <li><a href="#built-in-data-loading-functions" id="toc-built-in-data-loading-functions" class="nav-link" data-scroll-target="#built-in-data-loading-functions"><span class="header-section-number">4.4.1</span> Built-in Data Loading Functions</a></li>
-  <li><a href="#core-tidyverse-data-operations" id="toc-core-tidyverse-data-operations" class="nav-link" data-scroll-target="#core-tidyverse-data-operations"><span class="header-section-number">4.4.2</span> Core <code>tidyverse</code> Data Operations</a></li>
+  <li><a href="#sec-tidyverse-core" id="toc-sec-tidyverse-core" class="nav-link" data-scroll-target="#sec-tidyverse-core"><span class="header-section-number">4.4.2</span> Core <code>tidyverse</code> Data Operations</a></li>
   </ul></li>
   <li><a href="#dplyr" id="toc-dplyr" class="nav-link" data-scroll-target="#dplyr"><span class="header-section-number">4.5</span> <code>dplyr</code></a>
   <ul class="collapse">
@@ -273,7 +297,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Wrangling I - Loading, Cleaning and Tidying</span></h1>
+<h1 class="title"><span id="sec-data-1" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Wrangling I - Loading, Cleaning and Tidying</span></span></h1>
 </div>
 
 
@@ -310,7 +334,7 @@ Example: Aircraft Data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An aircraft fleet manager has many aircraft. Each aircraft can have 2 or 4 engines. Extensive in-flight data about the aircraft is collected, including information about the engines (e.g.&nbsp;temperatures, pressures, thrust produced, fuel consumption rates) and the aircraft themselves (e.g.&nbsp;total number of passengers, source and destination airports, GPS coordinates, heights). The best way to store all of this information might be in a series of tables in a <em>relational database</em> (see Week 10).</p>
+<p>An aircraft fleet manager has many aircraft. Each aircraft can have 2 or 4 engines. Extensive in-flight data about the aircraft is collected, including information about the engines (e.g.&nbsp;temperatures, pressures, thrust produced, fuel consumption rates) and the aircraft themselves (e.g.&nbsp;total number of passengers, source and destination airports, GPS coordinates, heights). The best way to store all of this information might be in a series of tables in a <em>relational database</em> (see <a href="week09.html" class="quarto-xref">Week&nbsp;<span>9</span></a>).</p>
 <p>When analysing the data, it is helpful to have all the explanatory variables in a single <em>matrix</em>, and the response variables in a <em>vector</em>, one row per observation. Depending on what we are modelling, the shape of this data may change. For example: 1. If we are interested in flight time as a function of aircraft weight, we would have one row per journey. 2. If we are interested in engine performance as a function of aircraft height, we would have one row per engine monitoring record. The two datasets would have (significantly) different sizes, and moreover, would be completely different to the structure of the database in which the data is stored.</p>
 </div>
 </div>
@@ -397,7 +421,7 @@ Note
 <h2 data-number="4.3" class="anchored" data-anchor-id="the-tidyverse-ecosystem"><span class="header-section-number">4.3</span> The <code>tidyverse</code> Ecosystem</h2>
 <p>The <code>tidyverse</code> is a collection of <code>R</code> packages with a shared design philosophy. The core packages of the <code>tidyverse</code> are:</p>
 <ul>
-<li><code>ggplot2</code> for visualisation, using the <em>Grammar of Graphics</em> (Week 6),</li>
+<li><code>ggplot2</code> for visualisation, using the <em>Grammar of Graphics</em> (<a href="week06.html" class="quarto-xref">Week&nbsp;<span>6</span></a>),</li>
 <li><code>dplyr</code> which provides data manipulation tools,</li>
 <li><code>tidyr</code> for transforming datasets to a tidy format,</li>
 <li><code>readr</code> for reading rectangular data in a variety of formats,</li>
@@ -507,16 +531,16 @@ Tip
 </div>
 </section>
 </section>
-<section id="core-tidyverse-data-operations" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="core-tidyverse-data-operations"><span class="header-section-number">4.4.2</span> Core <code>tidyverse</code> Data Operations</h3>
+<section id="sec-tidyverse-core" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="sec-tidyverse-core"><span class="header-section-number">4.4.2</span> Core <code>tidyverse</code> Data Operations</h3>
 <p>To create tidy data the main operations are</p>
 <ul>
 <li><strong>Data Import</strong>: (<code>readr::read_csv()</code> or, later, <code>dbplyr</code>)</li>
 <li><strong>Transformations</strong> (<code>dplyr</code>)</li>
 <li><strong>Reshaping</strong> (<code>tidyr</code>)</li>
 </ul>
-<p>We will look at these, as well as some other common <code>tidyverse</code> libraries and functions, in the labs this week and next.</p>
-<p>It is standard to use <strong>pipes</strong> (<code>|&gt;</code> and <code>%&gt;%</code>) to chain together operations in a readable, step-by-step way. Moreover <code>tidyverse</code> is tightly integrated with plotting libraries like <code>ggplot2</code>.</p>
+<p>We will look at these, as well as some other common <code>tidyverse</code> libraries and functions, in the labs this week and <a href="@sec-data-2">next</a>.</p>
+<p>It is standard to use <a href="@sec-pipes"><strong>pipes</strong></a> (<code>|&gt;</code> and <code>%&gt;%</code>) to chain together operations in a readable, step-by-step way. Moreover <code>tidyverse</code> is tightly integrated with plotting libraries like <code>ggplot2</code>.</p>
 </section>
 </section>
 <section id="dplyr" class="level2" data-number="4.5">

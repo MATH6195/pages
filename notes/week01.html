@@ -142,7 +142,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,6 +167,30 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./week06.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Visualisation Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">SQL for Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -207,7 +231,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science</span></h1>
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science</span></span></h1>
 </div>
 
 
@@ -260,12 +284,11 @@ div.csl-indent {
 <li><strong>Understand</strong>: A loop consisting of:
 <ul>
 <li><strong>Transform</strong>: Transform the data into a standardised form that you can can be passed to algorithms.</li>
-<li><strong>Visualise</strong>: Produce plots from your data to inform model choice (Week 7).</li>
-<li><strong>Model</strong>: Fit statistical or machine learning models to make inferences or predictions (Week 2).</li>
+<li><strong>Visualise</strong>: Produce plots from your data to inform model choice.</li>
+<li><strong>Model</strong>: Fit statistical or machine learning models to make inferences or predictions.</li>
 </ul></li>
 <li><strong>Communicate</strong>: Translate your results into language that in understandable for stakeholders, so you can discuss what actions to take.</li>
 </ul>
-<p>We will go through each of these in the weeks listed above</p>
 <p>As with much of data science there are other Data Science workflows you could follow, for example <span class="citation" data-cites="Donoho2017">(<a href="bibliography.html#ref-Donoho2017" role="doc-biblioref">Donoho 2017</a>)</span> or <span class="citation" data-cites="Wild1999">(<a href="bibliography.html#ref-Wild1999" role="doc-biblioref">Wild and Pfannkuch 1999</a>)</span> but most of them are in the same spirit as the above.</p>
 </section>
 <section id="the-role-of-computation" class="level2" data-number="1.3">
@@ -326,7 +349,7 @@ Consequences of Non-Reproducible Results
 <p>In the real world, data science can drive government, medical and business decisions. Policy decisions based on irreproducible analyses could be <em>genuinely dangerous</em> and <em>harmful</em>. This is therefore something to be taken seriously.</p>
 </div>
 </div>
-<p>We will look at reproducibility in detail in <strong>Week 3</strong>. For now we will focus on two practical points that will make engaging with the material in Week 1 and 2 easier.</p>
+<p>We will look at reproducibility in detail in <a href="week03.html" class="quarto-xref">Week&nbsp;<span>3</span></a>. For now we will focus on two practical points that will make engaging with the material in Week 1 and 2 easier.</p>
 <section id="r-and-quarto" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="r-and-quarto"><span class="header-section-number">1.5.1</span> R and Quarto</h3>
 <p>All of the labs will be conducted in <code>RStudio</code>, primarily using Quarto documents. Quarto is a successor to RMarkdown; it is a markdown-based file format that allows for <code>R</code> code to be embedded in the document. The document can then be <em>knitted</em> to produce various outputs.</p>
@@ -347,7 +370,7 @@ Consequences of Non-Reproducible Results
 <li>You can commit changes with <code>git commit -m "Commit message"</code></li>
 <li>You can push changes up to github with <code>git push</code>.</li>
 </ul>
-<p>If you have Git setup correctly on your machine, you will also see a Git pane in RStudio when you open it. We’ll go over this in more detail in Week 3, but the above will be enough for now.</p>
+<p>If you have Git setup correctly on your machine, you will also see a Git pane in RStudio when you open it. We’ll go over this in more detail in <a href="week03.html" class="quarto-xref">Week&nbsp;<span>3</span></a>, but the above will be enough for now.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -805,8 +828,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week02.html" class="pagination-link" aria-label="Coding in `R`">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week02.html" class="pagination-link" aria-label="&quot;Coding in `R`&quot;">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
