@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Data Ethics and Biases – MATH6195: Fundamentals of Data Science in R</title>
+<title>Data Ethics and Biases – MATH6195: Fundamentals of Data Science in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week07.html" rel="next">
-<link href="./week06.html" rel="prev">
+<link href="./bibliography.html" rel="next">
+<link href="./week10.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ethics.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Ethics and Biases</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ethics.html">Data Ethics and Biases</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding in <code>R</code></span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">“Coding in <code>R</code>”</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,14 +171,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ethics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Ethics and Biases</span></span></a>
+  <a href="./week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span></a>
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Research Software Engineering and Architecture in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">SQL for Data Science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data Ethics and Biases</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -178,14 +216,21 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#ethics-in-data-science" id="toc-ethics-in-data-science" class="nav-link" data-scroll-target="#ethics-in-data-science"><span class="header-section-number">7.1</span> Ethics in Data Science</a>
+  <li><a href="#ethics-in-data-science" id="toc-ethics-in-data-science" class="nav-link" data-scroll-target="#ethics-in-data-science">Ethics in Data Science</a>
   <ul class="collapse">
-  <li><a href="#why-does-ethics-matter-in-data-science" id="toc-why-does-ethics-matter-in-data-science" class="nav-link" data-scroll-target="#why-does-ethics-matter-in-data-science"><span class="header-section-number">7.1.1</span> Why does Ethics Matter in Data Science?</a></li>
-  <li><a href="#understanding-bias-in-data-science" id="toc-understanding-bias-in-data-science" class="nav-link" data-scroll-target="#understanding-bias-in-data-science"><span class="header-section-number">7.1.2</span> Understanding Bias in Data Science</a></li>
-  <li><a href="#regulatory-considerations" id="toc-regulatory-considerations" class="nav-link" data-scroll-target="#regulatory-considerations"><span class="header-section-number">7.1.3</span> Regulatory Considerations</a></li>
-  <li><a href="#consequences-of-violating-gdpr" id="toc-consequences-of-violating-gdpr" class="nav-link" data-scroll-target="#consequences-of-violating-gdpr"><span class="header-section-number">7.1.4</span> Consequences of Violating GDPR</a></li>
-  <li><a href="#practical-steps" id="toc-practical-steps" class="nav-link" data-scroll-target="#practical-steps"><span class="header-section-number">7.1.5</span> Practical Steps</a></li>
+  <li><a href="#ethics-by-design" id="toc-ethics-by-design" class="nav-link" data-scroll-target="#ethics-by-design">Ethics by Design</a></li>
   </ul></li>
+  <li><a href="#understanding-bias-in-data-science" id="toc-understanding-bias-in-data-science" class="nav-link" data-scroll-target="#understanding-bias-in-data-science">Understanding Bias in Data Science</a>
+  <ul class="collapse">
+  <li><a href="#regulatory-considerations" id="toc-regulatory-considerations" class="nav-link" data-scroll-target="#regulatory-considerations">Regulatory Considerations</a></li>
+  <li><a href="#consequences-of-violating-gdpr" id="toc-consequences-of-violating-gdpr" class="nav-link" data-scroll-target="#consequences-of-violating-gdpr">Consequences of Violating GDPR</a></li>
+  </ul></li>
+  <li><a href="#managing-ethics-as-a-data-scientist" id="toc-managing-ethics-as-a-data-scientist" class="nav-link" data-scroll-target="#managing-ethics-as-a-data-scientist">Managing Ethics as a Data Scientist</a>
+  <ul class="collapse">
+  <li><a href="#data-cards" id="toc-data-cards" class="nav-link" data-scroll-target="#data-cards">Data Cards</a></li>
+  <li><a href="#model-cards" id="toc-model-cards" class="nav-link" data-scroll-target="#model-cards">Model Cards</a></li>
+  </ul></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
   </ul>
 </nav>
     </div>
@@ -194,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Ethics and Biases</span></h1>
+<h1 class="title">Data Ethics and Biases</h1>
 </div>
 
 
@@ -215,22 +260,30 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="unnumbered anchored" data-anchor-id="objectives">Objectives</h2>
 <p>By the end of this lecture you should be able to: - Identify ethical and regulatory considerations in data science projects. - Recognise different types of biases and their impacts. - Evaluate real-world case studies through an ethical and regulatory lens.</p>
 </section>
-<section id="ethics-in-data-science" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="ethics-in-data-science"><span class="header-section-number">7.1</span> Ethics in Data Science</h2>
-<section id="why-does-ethics-matter-in-data-science" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="why-does-ethics-matter-in-data-science"><span class="header-section-number">7.1.1</span> Why does Ethics Matter in Data Science?</h3>
-<ul>
-<li>Data science decisions can significantly impact individuals and society.</li>
-<li>Unethical use of data can lead to discrimination, privacy violations, and loss of trust.</li>
-<li>Responsible data practices help prevent harm and promote fairness.</li>
-<li>Ethical considerations guide data collection, analysis, and sharing.</li>
-<li>Transparency and accountability are essential for trustworthy data science.</li>
-</ul>
-<p>Motivate with an applied dataset, give examples of how an analysis could lead to ethical issues.</p>
+<section id="ethics-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="ethics-in-data-science">Ethics in Data Science</h2>
+<p>Data science decisions can have profound effects on individuals and society. When data is used carelessly or unethically, it can result in discrimination, breaches of privacy, and a loss of public trust. Practising responsible data science helps prevent harm and supports fairness. Ethical considerations should inform every stage of a project, from data collection to analysis and sharing. Being transparent and accountable is <strong>crucial</strong> for building trust and ensuring that data science serves the public good.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case Study: Amazon’s AI Recruiting Tool
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Amazon developed an AI recruiting tool to automate the process of reviewing job applicants. However, the system showed bias against women, downgrading resumes that included terms like “women’s” or were from all-women colleges. This bias stemmed from training data that reflected <strong>historical male dominance</strong> in tech roles. Despite attempts to fix the issue, Amazon ultimately scrapped the tool, highlighting the risks of relying on biased data and the importance of careful oversight in AI systems.</p>
+<p>For more information see <a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/">this</a> news article.</p>
+</div>
+</div>
+<section id="ethics-by-design" class="level3">
+<h3 class="anchored" data-anchor-id="ethics-by-design">Ethics by Design</h3>
 </section>
-<section id="understanding-bias-in-data-science" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="understanding-bias-in-data-science"><span class="header-section-number">7.1.2</span> Understanding Bias in Data Science</h3>
-<p>Talk about biases that we could encounter in data science and how they could lead to ethical issues if not recognised. Some examples:</p>
+</section>
+<section id="understanding-bias-in-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-bias-in-data-science">Understanding Bias in Data Science</h2>
+<p>The main cause of the previous case study was a <em>bias</em> in the data set that was unaccounted for. Understanding the kinds of bias that can affect our analyses can help with mitigating the biases. Some examples:</p>
 <ul>
 <li><strong>Sampling Bias:</strong> Data collected is not representative of the population intended to be analyzed.</li>
 <li><strong>Selection Bias:</strong> Certain groups are systematically excluded or included, skewing results.</li>
@@ -238,9 +291,23 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Confirmation Bias:</strong> Tendency to interpret or select data that confirms pre-existing beliefs.</li>
 <li><strong>Algorithmic Bias:</strong> Models produce systematically prejudiced results due to biased training data or design.</li>
 </ul>
-</section>
-<section id="regulatory-considerations" class="level3" data-number="7.1.3">
-<h3 data-number="7.1.3" class="anchored" data-anchor-id="regulatory-considerations"><span class="header-section-number">7.1.3</span> Regulatory Considerations</h3>
+<p>In the Amazon example above there was a <em>selection bias</em>: because the training set consisted largely of male candidates, the trained algorithm exhibited the same bias towards male candidates.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Assessing Biases
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In general, when we train machine learning algorithms, we are <em>looking</em> for algorithms that identify a bias in a training set (e.g.&nbsp;“candidates with higher scores in their data science course at University tend to do better in their jobs”). There is a difference between this kind of bias, where the algorithm identifies a genuine relationship relevant to job performance, and harmful biases, such as discrimination.</p>
+<p>The key distinction is whether the bias reflects a legitimate, job-related factor or perpetuates unfair treatment based on protected characteristics. Responsible data science requires us to critically assess which biases are acceptable (e.g., those that improve prediction based on relevant skills) and which are unethical or illegal (e.g., those that disadvantage groups based on gender, race, or other protected attributes).</p>
+</div>
+</div>
+<section id="regulatory-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="regulatory-considerations">Regulatory Considerations</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -254,7 +321,7 @@ Disclaimer
 <p>We cannot discuss the regulatory environment of every country, so we will focus on UK regulations. Moreover this is too complex of a topic to cover thoroughly in a single lecture, and regulations can change. Therefore, when applying in your own work, check the latest regulations and seek expert advice if needed. Always ensure compliance with relevant laws and guidelines, as these may differ depending on your location and the nature of your data.</p>
 </div>
 </div>
-<p>From the UK Government’s summary of UK GDPR; data must be:</p>
+<p>From the UK Government’s <a href="https://www.gov.uk/data-protection">summary of UK GDPR</a>; data must be:</p>
 <blockquote class="blockquote">
 <ul>
 <li>used fairly, lawfully and transparently</li>
@@ -272,26 +339,158 @@ Disclaimer
 <li>Sex life or orientation</li>
 </ul>
 </section>
-<section id="consequences-of-violating-gdpr" class="level3" data-number="7.1.4">
-<h3 data-number="7.1.4" class="anchored" data-anchor-id="consequences-of-violating-gdpr"><span class="header-section-number">7.1.4</span> Consequences of Violating GDPR</h3>
+<section id="consequences-of-violating-gdpr" class="level3">
+<h3 class="anchored" data-anchor-id="consequences-of-violating-gdpr">Consequences of Violating GDPR</h3>
+<p>To ensure that GDPR is adopted by companies, hefty penalties have been attached to non-compliance. Organizations can face fines of up to £17.5 million or 4% of annual global turnover, whichever is higher. Penalties are similar in the EU.</p>
+<p>In addition to this there are non-financial repercussions, including:</p>
 <ul>
-<li><strong>Financial Penalties:</strong> Organizations can face fines of up to £17.5 million or 4% of annual global turnover, whichever is higher.</li>
 <li><strong>Reputational Damage:</strong> Loss of public trust and damage to brand reputation.</li>
 <li><strong>Legal Action:</strong> Individuals affected by data breaches may seek compensation.</li>
 <li><strong>Operational Disruption:</strong> Regulatory investigations can disrupt business operations.</li>
-<li><strong>Mandatory Remediation:</strong> Organizations may be required to change their data practices or implement corrective measures.</li>
 </ul>
 </section>
-<section id="practical-steps" class="level3" data-number="7.1.5">
-<h3 data-number="7.1.5" class="anchored" data-anchor-id="practical-steps"><span class="header-section-number">7.1.5</span> Practical Steps</h3>
+</section>
+<section id="managing-ethics-as-a-data-scientist" class="level2">
+<h2 class="anchored" data-anchor-id="managing-ethics-as-a-data-scientist">Managing Ethics as a Data Scientist</h2>
+<p>In the interests of <em>ethics by design</em>, various frameworks have been introduced to support a data scientist, both in terms of documenting potential ethical concerns in datasets and highlighting the relevant features of downstream processors (e.g.&nbsp;AI models). In this class we will focus on <em>data cards</em> and <em>model cards</em>.</p>
+<section id="data-cards" class="level3">
+<h3 class="anchored" data-anchor-id="data-cards">Data Cards</h3>
+<p>The research paper by <span class="citation" data-cites="Pushkarna2022">(<a href="bibliography.html#ref-Pushkarna2022" role="doc-biblioref">Pushkarna, Zaldivar, and Kjartansson 2022</a>)</span> proposed <em>data cards</em>, a framework for documenting datasets that includes thorough documentation of potential ethical considerations. A more digestible summary can be found <a href="https://sites.research.google/datacardsplaybook/">here</a>. The documentation required by the framework is quite extensive and includes far more information than one would typically have access to even as a data owner; completing a full data card could be challenging, but still represents the current “gold standard” for data documentation. Moreover, not every field needs to be completed in a data card to provide a useful data summary. (For example, <a href="https://www.kaggle.com">Kaggle</a> has its users complete partial data cards, and scores datasets based on the quality of the documentation).</p>
+<p>Particularly relevant to ethics is the <em>Sensitivity of Data</em> section (see <a href="https://github.com/PAIR-code/datacardsplaybook/blob/main/templates/DataCardsExtendedTemplate.md">relevant section here</a>).</p>
+<section id="practical-implementation-of-data-cards" class="level4">
+<h4 class="anchored" data-anchor-id="practical-implementation-of-data-cards">Practical Implementation of Data Cards</h4>
+<p>For this course we will use a minimal version of a data card containing the following fields.</p>
+<blockquote class="blockquote">
 <ul>
-<li><a href="https://huggingface.co/docs/hub/en/model-cards">Model cards</a>: they will be consumers rather than developers of models. Give an example of a model card, and talk about how to interpret it.</li>
-<li><a href="https://sites.research.google/datacardsplaybook/">Data Cards</a>: Talk about how to complete these for “new” datasets that a stakeholder might provide, that are unlikely to be accompanied by such data.</li>
-<li>Case study: application to an applied problem.</li>
+<li>Dataset name</li>
+<li>Version / date</li>
+<li>Short description (1–2 sentences)</li>
+<li>Source / provenance (where data comes from; link)</li>
+<li>Purpose / intended use (what analyses are allowed; forbidden uses)</li>
+<li>Composition summary (rows, columns, key variables, sample size)</li>
+<li>Protected attributes present? (yes/no; list)</li>
+<li>Missingness summary (major variables with missingness)</li>
+<li>Collection method / measurement details (brief)</li>
+<li>Known limitations / biases (brief bullets)</li>
+<li>Privacy/sensitivity (contains personal data? special categories?)</li>
+<li>Licence / sharing restrictions</li>
+<li>Contact / owner (name, email)</li>
+</ul>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is an example model card for the Titanic dataset from Kaggle(https://www.kaggle.com/c/titanic):</p>
+<ul>
+<li>Dataset name: Titanic (Kaggle / public)</li>
+<li>Version / date: 2020-11-01</li>
+<li>Short description: Passenger manifest for Titanic voyage with survival label.</li>
+<li>Source / provenance: Kaggle Titanic dataset — https://www.kaggle.com/c/titanic</li>
+<li>Purpose / intended use: Teaching classification; NOT for profiling or real-world commercial decisions.</li>
+<li>Composition summary: 891 rows, columns include PassengerId, Survived, Pclass, Name, Sex, Age, SibSp, Parch, Ticket, Fare, Cabin, Embarked.</li>
+<li>Protected attributes present? Yes — sex (gender). Age may be sensitive for some contexts.</li>
+<li>Missingness summary: Age ~20% missing, Cabin ~77% missing. <em>(For illustration, not accurate)</em></li>
+<li>Collection method / measurement details: Historical passenger manifest; some fields manually digitized; possible transcription errors.</li>
+<li>Known limitations / biases:
+<ul>
+<li>Not representative of modern populations.</li>
+<li>Survival correlated with class and gender due to historical boarding policies — not causal for many modern uses.</li>
+</ul></li>
+<li>Privacy/sensitivity: Public historical data, low privacy risk, but contains personal names.</li>
+<li>Licence / sharing restrictions: Unknown</li>
+<li>Contact / owner: Kaggle</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In assessments you will not be required to complete entire data cards, but you may need to complete small parts of them.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="model-cards" class="level3">
+<h3 class="anchored" data-anchor-id="model-cards">Model Cards</h3>
+<p>Model cards are standardized documentation frameworks designed to provide transparent information about machine learning models. They summarize key details such as intended use, performance metrics, ethical considerations, limitations, and potential risks. Model cards help stakeholders understand how a model works, its strengths and weaknesses, and any <strong>fairness or safety</strong> concerns.</p>
+<p>While we will not use machine learning models in this course, it is increasingly important for a data scientist to be able to understand the models as a consumer. We will therefore focus on reading and understanding model cards from the fairness and safety perspective.</p>
+<section id="example-model-card" class="level4">
+<h4 class="anchored" data-anchor-id="example-model-card">Example Model Card</h4>
+<p>Below is a simplified example of a model card for a hypothetical loan approval classifier:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example Model Card
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Model name:</strong> Loan Approval Classifier v1.0</li>
+<li><strong>Version / date:</strong> 2024-06-01</li>
+<li><strong>Short description:</strong> Predicts loan approval based on applicant financial and demographic data.</li>
+<li><strong>Intended use:</strong> Assisting bank staff in evaluating loan applications; NOT for fully automated decision-making.</li>
+<li><strong>Performance metrics:</strong> Accuracy: 85%, Precision: 80%, Recall: 78% (on validation set)</li>
+<li><strong>Protected attributes considered:</strong> Gender, ethnicity, age (used for fairness analysis, not as predictors)</li>
+<li><strong>Fairness assessment:</strong> Tested for disparate impact; no significant bias detected on gender, but slight bias observed for age group 60+.</li>
+<li><strong>Limitations:</strong> May not generalize to applicants outside the training data region; sensitive to missing income data.</li>
+<li><strong>Ethical considerations:</strong> Should not be used as the sole basis for loan decisions; human review required.</li>
+<li><strong>Risks:</strong> Potential for indirect bias if input features correlate with protected attributes; risk of over-reliance on model outputs.</li>
+<li><strong>Contact / owner:</strong> Data Science Team, Example Bank (contact@examplebank.com)</li>
+</ul>
+</div>
+</div>
+<p>As a data scientist feeding data into a model, we need to assess whether the model card raises any causes for concern and ensure that our analysis pipeline and stakeholders are aware. In this case we might consider:</p>
+<ul>
+<li>Attaching warnings to our analysis highlighting the need for human review.</li>
+<li>Testing for systematic bias, e.g.&nbsp;by classifying records with protected characteristics and assessing empirically whether there is a bias present.</li>
+<li>Ensuring the model is not extrapolating, by checking how closely input test records correlate with the training set.</li>
+</ul>
+</section>
+<section id="why-model-cards-matter" class="level4">
+<h4 class="anchored" data-anchor-id="why-model-cards-matter">Why Model Cards Matter</h4>
+<p>Model cards promote transparency and accountability by documenting how a model was built, tested, and intended to be used. They help users and stakeholders:</p>
+<ul>
+<li>Understand the model’s strengths and weaknesses.</li>
+<li>Identify potential fairness or safety concerns.</li>
+<li>Make informed decisions about deploying or trusting the model.</li>
+<li>Ensure compliance with ethical and regulatory standards.</li>
+</ul>
+<p>For more details, see <a href="https://arxiv.org/abs/1810.03993">Model Cards for Model Reporting</a> and the <a href="https://modelcards.withgoogle.com/about">Google Model Card Toolkit</a>.</p>
+</section>
+</section>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<p><strong>Do’s</strong> - <strong>Do</strong> document your data and models using frameworks like data cards and model cards—transparency builds trust and helps identify risks early. - <strong>Do</strong> actively look for and mitigate biases at every stage, from data collection through to deployment and monitoring.</p>
+<p><strong>Don’ts</strong></p>
+<ul>
+<li><strong>Don’t</strong> ignore GDPR and regulatory requirements. Penalties can reach £17.5 million or 4% of global turnover.</li>
+<li><strong>Don’t</strong> assume your data is representative or your model is fair. Always critically assess for limitations and potential harms.</li>
 </ul>
 
 
-</section>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Pushkarna2022" class="csl-entry" role="listitem">
+Pushkarna, Mahima, Andrew Zaldivar, and Oddur Kjartansson. 2022. <span>“Data Cards: Purposeful and Transparent Dataset Documentation for Responsible AI.”</span> In <em>2022 ACM Conference on Fairness Accountability and Transparency</em>, 1776–826. FAccT ’22. ACM. <a href="https://doi.org/10.1145/3531146.3533231">https://doi.org/10.1145/3531146.3533231</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -717,13 +916,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week06.html" class="pagination-link" aria-label="Data Visualisation Principles">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Visualisation Principles</span></span>
+      <a href="./week10.html" class="pagination-link" aria-label="Working with Big Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Working with Big Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week07.html" class="pagination-link" aria-label="Introduction to Shiny">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to Shiny</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./bibliography.html" class="pagination-link" aria-label="Bibliography">
+        <span class="nav-page-text">Bibliography</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
