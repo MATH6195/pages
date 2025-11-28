@@ -549,7 +549,7 @@ Regular Expressions
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">year</span>(<span class="fu">today</span>()), <span class="fu">month</span>(<span class="fu">today</span>()), <span class="fu">day</span>(<span class="fu">today</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2025   11    4</code></pre>
+<pre><code>[1] 2025   11   28</code></pre>
 </div>
 </div>
 <p>For example, if we want to compute a student’s age we can use <code>lubridate</code>’s <code>interval</code> function followed by <code>time_length</code></p>
@@ -558,13 +558,13 @@ Regular Expressions
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">time_length</span>(<span class="st">"years"</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>student_data<span class="sc">$</span>Age</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 23.98356 22.23014 23.16164 22.58082 23.48493 21.21096 21.40822 22.91233
- [9] 21.35068 22.92877 23.25205 22.34521 23.76986 22.21096 22.07945 22.17534
-[17] 21.36438 22.16164 23.77260 23.22740</code></pre>
+<pre><code> [1] 24.04932 22.29589 23.22740 22.64658 23.55068 21.27671 21.47397 22.97808
+ [9] 21.41644 22.99452 23.31781 22.41096 23.83562 22.27671 22.14521 22.24110
+[17] 21.43014 22.22740 23.83836 23.29315</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>student_data<span class="sc">$</span>Age <span class="sc">|&gt;</span> <span class="fu">floor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 23 22 23 22 23 21 21 22 21 22 23 22 23 22 22 22 21 22 23 23</code></pre>
+<pre><code> [1] 24 22 23 22 23 21 21 22 21 22 23 22 23 22 22 22 21 22 23 23</code></pre>
 </div>
 </div>
 <p>Or, we could use <code>as.period</code> to get a precise calendar difference:</p>
@@ -572,13 +572,13 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">interval</span>(student_data<span class="sc">$</span><span class="st">`</span><span class="at">Date of Birth</span><span class="st">`</span>, <span class="fu">today</span>()) <span class="sc">|&gt;</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.period</span>(<span class="at">unit=</span><span class="st">"years"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "23y 11m 25d 0H 0M 0S" "22y 2m 23d 0H 0M 0S"  "23y 1m 29d 0H 0M 0S" 
- [4] "22y 6m 29d 0H 0M 0S"  "23y 5m 24d 0H 0M 0S"  "21y 2m 16d 0H 0M 0S" 
- [7] "21y 4m 27d 0H 0M 0S"  "22y 10m 29d 0H 0M 0S" "21y 4m 6d 0H 0M 0S"  
-[10] "22y 11m 5d 0H 0M 0S"  "23y 3m 0d 0H 0M 0S"   "22y 4m 3d 0H 0M 0S"  
-[13] "23y 9m 8d 0H 0M 0S"   "22y 2m 16d 0H 0M 0S"  "22y 0m 29d 0H 0M 0S" 
-[16] "22y 2m 3d 0H 0M 0S"   "21y 4m 11d 0H 0M 0S"  "22y 1m 29d 0H 0M 0S" 
-[19] "23y 9m 9d 0H 0M 0S"   "23y 2m 22d 0H 0M 0S" </code></pre>
+<pre><code> [1] "24y 0m 18d 0H 0M 0S"  "22y 3m 16d 0H 0M 0S"  "23y 2m 22d 0H 0M 0S" 
+ [4] "22y 7m 22d 0H 0M 0S"  "23y 6m 17d 0H 0M 0S"  "21y 3m 9d 0H 0M 0S"  
+ [7] "21y 5m 20d 0H 0M 0S"  "22y 11m 22d 0H 0M 0S" "21y 4m 30d 0H 0M 0S" 
+[10] "22y 11m 29d 0H 0M 0S" "23y 3m 24d 0H 0M 0S"  "22y 4m 27d 0H 0M 0S" 
+[13] "23y 10m 1d 0H 0M 0S"  "22y 3m 9d 0H 0M 0S"   "22y 1m 22d 0H 0M 0S" 
+[16] "22y 2m 27d 0H 0M 0S"  "21y 5m 4d 0H 0M 0S"   "22y 2m 22d 0H 0M 0S" 
+[19] "23y 10m 2d 0H 0M 0S"  "23y 3m 15d 0H 0M 0S" </code></pre>
 </div>
 </div>
 <p>We could also just subtract the dates, but this gives a difference in terms of <em>days</em> which would be difficult to convert to years (due to leap years).</p>
@@ -586,8 +586,8 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">today</span>() <span class="sc">-</span> student_data<span class="sc">$</span><span class="st">`</span><span class="at">Date of Birth</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time differences in days
- [1] 8760 8120 8460 8248 8578 7747 7819 8369 7798 8375 8493 8162 8682 8113 8065
-[16] 8100 7803 8095 8683 8484</code></pre>
+ [1] 8784 8144 8484 8272 8602 7771 7843 8393 7822 8399 8517 8186 8706 8137 8089
+[16] 8124 7827 8119 8707 8508</code></pre>
 </div>
 </div>
 </section>
@@ -603,7 +603,7 @@ Regular Expressions
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>time2 <span class="ot">=</span> <span class="fu">now</span>()</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>time2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-11-04 13:52:18 GMT"</code></pre>
+<pre><code>[1] "2025-11-28 09:17:56 GMT"</code></pre>
 </div>
 </div>
 <p>We can then extract hours, minutes and seconds:</p>
